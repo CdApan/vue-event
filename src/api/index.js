@@ -1,12 +1,18 @@
 import axios from '@/utils/request'
 
-// 登录接口
-export const registerAPI = () => axios({
+// 注册接口
+export const registerAPI = (Obj) => axios({
   url: '/api/reg',
   method: 'POST',
+  data: Obj
+})
+
+// 登录接口
+export const loginAPI = ({ username, password }) => axios({
+  url: '/api/login',
+  method: 'POST',
   data: {
-    username: 'lidongxu',
-    password: '111111',
-    repassword: '111111'
+    username,
+    password
   }
 })
