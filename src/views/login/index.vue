@@ -65,6 +65,7 @@ export default {
           if (data.code !== 0) return this.$message.error(data.message)
           this.$message.success(data.message)
           this.updataToken(data.token)
+          this.$router.push('/')
         } else {
           return false
         }
